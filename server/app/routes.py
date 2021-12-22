@@ -1,5 +1,6 @@
 from flask import Blueprint
 from .controller import *
+from .views import *
 
 api = Blueprint('api', __name__)
 
@@ -10,3 +11,11 @@ def test_location():
 @api.route('/api/account')
 def account_location():
     return accountList()
+
+@api.route('/home')
+def home():
+    return Home()
+
+@api.route('/about')
+def about():
+    return About()

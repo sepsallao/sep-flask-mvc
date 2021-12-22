@@ -1,5 +1,5 @@
-def accountList():
-    return "list of accounts"
+def Home():
+    return "Home"
 
-def test():
-    return{'message':'test'}
+def About():
+    return "About"

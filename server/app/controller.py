@@ -1,5 +1,5 @@
 def accountList():
-    return "list of accounts"
+    return{'Balance':'200 pesos'}
 
 def test():
     return{'message':'test'}
