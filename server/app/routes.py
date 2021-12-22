@@ -1,5 +1,5 @@
 from flask import Blueprint
-from .views import *
+from .controller import *
 
 api = Blueprint('api', __name__)
 
