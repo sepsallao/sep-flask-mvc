@@ -1,12 +1,12 @@
-from flask import Flask
+from flask import Blueprint
 from .views import *
 
-app = Flask(__name__)
+api = Blueprint('api', __name__)
 
-@app.route('/api/test')
+@api.route('/api/test')
 def test_location():
     return test()
 
-@app.route('/api/account')
+@api.route('/api/account')
 def account_location():
     return accountList()
