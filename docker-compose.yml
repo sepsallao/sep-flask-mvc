@@ -1,0 +1,48 @@
+version: "3.9"
+
+services:
+  dbimg: # host name, also this is the image name of the db container
+    restart: always
+    image: postgres
+    env_file:
+      - ./server/database.env
+    ports:
+      - "5432:5432"
+    volumes:
+      - database-data:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=sep@hello.com
+      - PGADMIN_DEFAULT_PASSWORD=Ratmaxi.08
+    ports:
+      - "5050:80"
+    restart: always
+    volumes:
+      - pgadmin:/root/.pgadmin
+  backend:
+    restart: always
+    build: ./server
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./server:/app
+    links:
+      - postgres:postgres
+    environment:
+      FLASK_ENV: development
+      DATABASE_URL: postgresql://sep-flask-mvc-user:P4ssword.20@dbimg:5432/project-self-db
+  # frontend:
+  #   restart: always
+  #   build: ./client
+  #   ports:
+  #     - "3000:3000"
+  #   volumes:
+  #     - "./client:/app"
+  #     - "./client/logs/:/root/.npm/_logs"
+  #   depends_on:
+  #     - backend
+volumes:
+  database-data:
+
+  pgadmin:

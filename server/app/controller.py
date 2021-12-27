@@ -1,5 +1,8 @@
-def accountList():
-    return{'Balance':'200 pesos'}
+from flask import jsonify
 
-def test():
-    return{'message':'test'}
+def test(input_value):
+    return{'message':input_value}
+
+def content_to_query(content):
+    # return{'message':content}
+    return jsonify({'message': content})

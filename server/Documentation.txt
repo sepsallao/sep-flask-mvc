@@ -1,0 +1,10 @@
+Documentation.txt
+
+1. I finish first to understand mvc architecture for flask
+2. I started created files and directory
+3. I understand now how to import *sort of, edit once confident*
+4. Can't use work related codes so need to create a new schema and docker setup
+5. Setting up new database for project "self"
+6. MANTRA OF THE PROJECT BEFORE STARTING: EFFICIENCY
+7. Passing keyword from routes.py to controller.py 
+8. 
